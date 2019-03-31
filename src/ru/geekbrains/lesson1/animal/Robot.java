@@ -8,29 +8,62 @@ import ru.geekbrains.lesson1.Participant;
  */
 public class Robot implements Participant {
 
-    private String name;
+    private boolean isOnDistance;
 
-    public Robot(String name) {
-        this.name = name;
+    private int runDistance;
+    private int jumpHeight;
+    private String model;
+
+    public Robot(String model, int runDistance, int jumpHeight) {
+        this.model = model;
+        this.isOnDistance = true;
+        this.runDistance = runDistance;
+        this.jumpHeight = jumpHeight;
+    }
+
+    public Robot(String model) {
+        this.model = model;
     }
 
     @Override
     public boolean isOnDistance() {
-        return false; // TODO доработать по аналогии с классами животных
+        return isOnDistance;
     }
 
     @Override
     public void run(int distance) {
-        // TODO доработать по аналогии с классами животных
+        if (!isOnDistance) {
+            return;
+        }
+        if (distance > runDistance) {
+            System.out.println(String.format("Робот %s не смог пробежать кросс", this.model));
+            isOnDistance = false;
+            return;
+        }
+        System.out.println(String.format("Робот можели  %s пробежал кросс длинной %d", this.model, distance));
     }
 
     @Override
     public void jump(int height) {
-        // TODO доработать по аналогии с классами животных
+        if (!isOnDistance) {
+            return;
+        }
+        if (height > jumpHeight) {
+            System.out.println(String.format("Робот %s не смог перепрыгнуть перпятствие", this.model));
+            isOnDistance = false;
+            return;
+        }
+        System.out.println(String.format("Робот можели %s пругнул на высоту %d", this.model, height));
     }
 
     @Override
     public void swim(int distance) {
-        // TODO доработать по аналогии с классами животных
+        isOnDistance = false;
+        System.out.println("Робот не может плавать");
+    }
+
+    @Override
+    public String getInfoAboutParticipant() {
+        return String.format("Участник робот модели %s", this.model);
     }
 }

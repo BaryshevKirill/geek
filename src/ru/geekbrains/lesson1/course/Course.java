@@ -3,6 +3,9 @@ package ru.geekbrains.lesson1.course;
 import ru.geekbrains.lesson1.Participant;
 import ru.geekbrains.lesson1.Team;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Класс - полоса препятствий
  */
@@ -24,6 +27,14 @@ public class Course {
                     break;
                 }
             }
+            if(participant.isOnDistance()) {
+                team.addFinishedParticipant(participant);
+            }
         }
     }
+
+    public int size(){
+        return obstacles.length;
+    }
+
 }

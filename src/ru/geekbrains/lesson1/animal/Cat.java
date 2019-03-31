@@ -36,6 +36,7 @@ public class Cat extends Animal implements Participant {
             return;
         }
         if (distance > runDistance) {
+            System.out.println(String.format("Кошка %s не смогла робежать кросс", getName()));
             isOnDistance = false;
             return;
         }
@@ -48,10 +49,11 @@ public class Cat extends Animal implements Participant {
             return;
         }
         if (height > jumpHeight) {
+            System.out.println(String.format("Кошка %s не смогла перепрыгнуть преграду", getName()));
             isOnDistance = false;
             return;
         }
-        System.out.println(String.format("Собака %s пругнула на высоту %d", getName(), height));
+        System.out.println(String.format("Кошка %s прыгнула на высоту %d", getName(), height));
     }
 
     @Override
@@ -63,5 +65,10 @@ public class Cat extends Animal implements Participant {
 
     public void setRunDistance(int runDistance) {
         this.runDistance = runDistance;
+    }
+
+    @Override
+    public String getInfoAboutParticipant() {
+        return String.format("Участник кошка %s, возраст %d, цвет %s", getName(),getAge(),getColor().getName());
     }
 }
