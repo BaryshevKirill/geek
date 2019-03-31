@@ -16,4 +16,9 @@ public class Team {
     public Participant[] getParticipants() {
         return participants;
     }
+
+    public int size() {
+        return participants.length;
+    }
+
 }

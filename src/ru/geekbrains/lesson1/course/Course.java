@@ -26,4 +26,8 @@ public class Course {
             }
         }
     }
+
+    public int size(){
+        return obstacles.length;
+    }
 }

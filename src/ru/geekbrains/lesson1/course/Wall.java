@@ -12,6 +12,7 @@ public class Wall extends Obstacle {
 
     @Override
     public void doIt(Participant participant) {
+
         participant.jump(this.height);
     }
 }
