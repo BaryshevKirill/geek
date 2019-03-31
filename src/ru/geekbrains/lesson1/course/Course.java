@@ -12,7 +12,6 @@ import java.util.List;
 public class Course {
 
     private Obstacle[] obstacles;
-    private List<Participant> finishedParticipant = new ArrayList<>();
 
     public Course(Obstacle... obstacles) {
         this.obstacles = obstacles;
@@ -29,7 +28,7 @@ public class Course {
                 }
             }
             if(participant.isOnDistance()) {
-                finishedParticipant.add(participant);
+                team.addFinishedParticipant(participant);
             }
         }
     }
@@ -38,18 +37,4 @@ public class Course {
         return obstacles.length;
     }
 
-    public void showFinishedParticipant() {
-        int i = 1;
-        System.out.println("----Участники команды, успешно прошедшие полосу перпятствий----");
-
-        if(finishedParticipant.size() == 0) {
-            System.out.println("Никто из команды не смог преодолеть полосу препятствий");
-            return;
-        }
-
-        for(Participant par : finishedParticipant) {
-            System.out.println(i + ". " + par.getInfoAboutParticipant());
-            i++;
-        }
-    }
 }

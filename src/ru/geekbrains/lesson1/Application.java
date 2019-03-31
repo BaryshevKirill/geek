@@ -48,6 +48,6 @@ public class Application {
 
         System.out.println("!!!Окончание состязания!!!\n");
 
-        course.showFinishedParticipant();
+        team.showResults();
     }
 }
