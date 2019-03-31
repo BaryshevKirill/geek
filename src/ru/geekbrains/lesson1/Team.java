@@ -10,12 +10,15 @@ import java.util.List;
  */
 public class Team {
 
+    private String teamName = "";
+
     private Participant[] participants;
 
     private List<Participant> finishedParticipant = new ArrayList<>();
 
     // здесь используется конструктор с переменным числом параметров
-    public Team(Participant... participants) {
+    public Team(String teamName, Participant... participants) {
+        this.teamName = teamName;
         // внутри метода переменное число параметров интерпретируется как массив
         this.participants = participants;
     }
@@ -26,7 +29,7 @@ public class Team {
 
     public void getAllTeam() {
         int i = 1;
-        System.out.println("----Состав команды-----");
+        System.out.println("----Состав команды "+ getTeamName() +"-----");
         for (Participant par : participants) {
             System.out.println(String.valueOf(i) + ". " + par.getInfoAboutParticipant());
             i++;
@@ -39,6 +42,10 @@ public class Team {
 
     public void addFinishedParticipant(Participant par) {
         finishedParticipant.add(par);
+    }
+
+    public String getTeamName() {
+        return teamName;
     }
 
     public void showResults(){

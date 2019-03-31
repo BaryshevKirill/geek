@@ -16,7 +16,7 @@ import ru.geekbrains.lesson1.enums.Color;
 public class Application {
 
     public static void main(String[] args) {
-        Team team = new Team(
+        Team team = new Team("Ламповая команда",
                 new Cat("Барсик", Color.BLACK, 1, 100, 5),
                 new Dog("Черный",Color.GRAY,4,300,30,50),
                 new Human("Игнат",23,100,2,200),
