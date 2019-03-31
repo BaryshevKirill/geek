@@ -34,6 +34,7 @@ public class Human extends Animal implements Participant {
             return;
         }
         if (distance > runDistance) {
+            System.out.println(String.format("Человек %s не смог пробежать кросс", getName()));
             isOnDistance = false;
             return;
         }
@@ -46,6 +47,7 @@ public class Human extends Animal implements Participant {
             return;
         }
         if (height > jumpHeight) {
+            System.out.println(String.format("Человек %s не смог перепыгнуть препятствие", getName()));
             isOnDistance = false;
             return;
         }
@@ -58,6 +60,7 @@ public class Human extends Animal implements Participant {
             return;
         }
         if (distance > swimDistance) {
+            System.out.println(String.format("Человек %s не смог проплыть дистанцию", getName()));
             isOnDistance = false;
             return;
         }
@@ -67,5 +70,10 @@ public class Human extends Animal implements Participant {
     @Override
     public void voice() {
         System.out.println("JAVA и JS одно и то (rofl)");
+    }
+
+    @Override
+    public String getInfoAboutParticipant() {
+        return String.format("Участник человек %s, возраст %d", getName(),getAge());
     }
 }

@@ -5,7 +5,6 @@ package ru.geekbrains.lesson1;
  */
 public interface Participant {
 
-
     boolean isOnDistance();
 
     void run(int distance);
@@ -13,4 +12,7 @@ public interface Participant {
     void jump(int height);
 
     void swim(int distance);
+
+    String getInfoAboutParticipant();
+
 }

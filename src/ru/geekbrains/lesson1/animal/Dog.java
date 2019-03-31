@@ -38,6 +38,7 @@ public class Dog extends Animal implements Participant {
             return;
         }
         if (distance > runDistance) {
+            System.out.println(String.format("Пес %s не смог пробежать кросс", getName()));
             isOnDistance = false;
             return;
         }
@@ -47,9 +48,11 @@ public class Dog extends Animal implements Participant {
     @Override
     public void jump(int height) {
         if (!isOnDistance) {
+
             return;
         }
         if (height > jumpHeight) {
+            System.out.println(String.format("Пес %s не смог перепрыгнуть препятствие", getName()));
             isOnDistance = false;
             return;
         }
@@ -61,10 +64,17 @@ public class Dog extends Animal implements Participant {
         if (!isOnDistance) {
             return;
         }
-        if (swimDistance > jumpHeight) {
+        if (distance > swimDistance) {
+            System.out.println(String.format("Пес %s не смог прорлыть дистанцию", getName()));
             isOnDistance = false;
             return;
         }
         System.out.println(String.format("Пес %s проплыл дистанцию %d", getName(), swimDistance));
     }
+
+    @Override
+    public String getInfoAboutParticipant() {
+        return String.format("Участник собака %s, возраст %d, цвет %s", getName(),getAge(),getColor().getName());
+    }
+
 }

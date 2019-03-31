@@ -36,6 +36,7 @@ public class Robot implements Participant {
             return;
         }
         if (distance > runDistance) {
+            System.out.println(String.format("Робот %s не смог пробежать кросс", this.model));
             isOnDistance = false;
             return;
         }
@@ -48,6 +49,7 @@ public class Robot implements Participant {
             return;
         }
         if (height > jumpHeight) {
+            System.out.println(String.format("Робот %s не смог перепрыгнуть перпятствие", this.model));
             isOnDistance = false;
             return;
         }
@@ -58,5 +60,10 @@ public class Robot implements Participant {
     public void swim(int distance) {
         isOnDistance = false;
         System.out.println("Робот не может плавать");
+    }
+
+    @Override
+    public String getInfoAboutParticipant() {
+        return String.format("Участник робот модели %s", this.model);
     }
 }

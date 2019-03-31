@@ -18,7 +18,7 @@ public class Application {
     public static void main(String[] args) {
         Team team = new Team(
                 new Cat("Барсик", Color.BLACK, 1, 100, 5),
-                new Dog("Черный",Color.GRAY,4,300,3,50),
+                new Dog("Черный",Color.GRAY,4,300,30,50),
                 new Human("Игнат",23,100,2,200),
                 new Robot("modelX",500,200)
         );
@@ -40,6 +40,14 @@ public class Application {
             return;
         }
 
+        team.getAllTeam();
+
+        System.out.println("\n!!!Начинаем состязание!!!");
+
         course.doIt(team);
+
+        System.out.println("!!!Окончание состязания!!!\n");
+
+        course.showFinishedParticipant();
     }
 }
