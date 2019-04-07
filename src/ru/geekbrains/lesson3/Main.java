@@ -24,16 +24,16 @@ public class Main {
         /*Второе задание*/
         System.out.println("---------Второе задание---------");
         Phonebook phonebook = new Phonebook();
-        phonebook.add("Петров","111111");
-        phonebook.add("Барышев","222222");
-        phonebook.add("Барышева","333333");
-        phonebook.add("Игнат","444444");
-        phonebook.add("Петров","555555");
-        phonebook.add("Черина","666666");
-        phonebook.add("Барсик","777777");
-        phonebook.add("Грей","888888");
-        phonebook.add("Барышев","999999");
-        phonebook.add("Барышев","8913123123");
+        phonebook.add("Петров", "111111");
+        phonebook.add("Барышев", "222222");
+        phonebook.add("Барышева", "333333");
+        phonebook.add("Игнат", "444444");
+        phonebook.add("Петров", "555555");
+        phonebook.add("Черина", "666666");
+        phonebook.add("Барсик", "777777");
+        phonebook.add("Грей", "888888");
+        phonebook.add("Барышев", "999999");
+        phonebook.add("Барышев", "8913123123");
 
         phonebook.get(null);
         phonebook.get("Барышев");
@@ -60,16 +60,30 @@ public class Main {
         return map;
     }
 
-    /*Метод вывода уникальных слов из массива*/
+    /*Подумал что вывести слова которые встретились только один раз*/
+//    private static void showUniqueWords(Map<String, Integer> map) {
+//        System.out.println("В массиве найдены следующие уникальные слова (неповторяющиеся элементы массива):");
+//        int pos = 1;
+//        try {
+//            for (Map.Entry entry : map.entrySet()) {
+//                if ((int) entry.getValue() == 1) {
+//                    System.out.println(pos + ". " + entry.getKey());
+//                    pos++;
+//                }
+//            }
+//        } catch (NullPointerException ex) {
+//            ex.printStackTrace();
+//        }
+//
+//    }
+
     private static void showUniqueWords(Map<String, Integer> map) {
-        System.out.println("В массиве найдены следующие уникальные слова (неповторяющиеся элементы массива):");
+        System.out.println("В массиве найдены следующие уникальные слова:");
         int pos = 1;
         try {
             for (Map.Entry entry : map.entrySet()) {
-                if ((int) entry.getValue() == 1) {
-                    System.out.println(pos + ". " + entry.getKey());
-                    pos++;
-                }
+                System.out.println(pos + ". " + entry.getKey());
+                pos++;
             }
         } catch (NullPointerException ex) {
             ex.printStackTrace();
@@ -82,7 +96,7 @@ public class Main {
         System.out.println("Список эелментов массива и их количество");
 
         int pos = 1;
-        if(map == null || map.size() == 0) {
+        if (map == null || map.size() == 0) {
             System.out.println("Задана пустая карта");
             return;
         }
